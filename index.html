@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>To-Do List</h2>
+        <button type="button" id="btnAdd">Add</button>
+   
+
+    <div class="modal" id="modalAdd">
+        <div class="form-content">
+            <div class="btn-close-form" onclick="closeModalAdd () ">X</div>
+            <div class="form-body">
+                <form id="formAdd">
+                    <div class="control">
+                        <Label>Task: </label>
+                        <input type="text" name="task">
+                    </div>
+                </form>
+            </div>
+            <div class="form-footer">
+                <button type="button" onclick="closeModalAdd()">Cancelar</button>
+                <button type="button" onclick="createProduct()">Guardar</button>
+            </div>
+            <span id="msgFormAdd" class="msg-error"></span>
+        </div>
+    </div>
+
+    <div class="modal" id="modalEdit">
+        <div class="form-content">
+            <div class="btn-close-form" onclick="closeModalEdit()">X</div>
+            <div class="form-body">
+                <form id="formEdit">
+                    <input type="hidden" id="ID">
+                    <div>
+                        <h3>Editing Task</h3>
+                    </div>
+                    <div class="control">
+                        
+                        <input type="text" id="task">
+                    </div>
+                </form>
+            </div>
+            <div class="form-footer">
+                <button type="button" onclick="updateProduct()">Save</button>
+                <button type="button" onclick="closeModalEdit()">Cancel</button>
+            </div>
+            <span id="msgFormEdit" class="msg-error"></span>
+        </div>
+    </div>
+
+    <div class="alert" id="alert">Algo sucedió..</div>
+    <div id="productsList" class="products-list"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
